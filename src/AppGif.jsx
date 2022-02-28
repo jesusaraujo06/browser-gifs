@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 import { GifGrid } from './components/GifGrid';
 
 const App = ({ title }) => {
-	let [categories, setCategories] = useState(['One Push']);
+	let [categories, setCategories] = useState(['Bienvenido']);
 
 	// console.log(categories);
 
