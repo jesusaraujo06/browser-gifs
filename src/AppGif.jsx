@@ -4,16 +4,14 @@ import { PropTypes } from 'prop-types';
 import { GifGrid } from './components/GifGrid';
 
 const App = ({ title }) => {
-	let [categories, setCategories] = useState(['Dragon']);
+	let [categories, setCategories] = useState(['One Push']);
 
-	console.log(categories);
+	// console.log(categories);
 
 	return (
 		<>
 			<h2>{title}</h2>
 			<AddCategory setCategories={setCategories}></AddCategory>
-
-			<hr />
 
 			<ul>
 				{categories.map(category => (

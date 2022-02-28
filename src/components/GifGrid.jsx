@@ -1,15 +1,14 @@
 // import { useState, useEffect } from 'react';
-// import { getGifs } from '../helpers/getGifs';
-// import { GifGridItem } from './GifGridItem';
-
+import { GifGridItem } from './GifGridItem';
 import { useFetchGifs } from '../hooks/useFetchGifs';
 
 export const GifGrid = ({ category }) => {
-	const { loading } = useFetchGifs();
+	console.log('recibiendo category', category);
 
-	console.log(loading);
+	// Renombrar data a images con destructuracion
+	const { data: images, loading } = useFetchGifs(category);
 
-	// const [images, setimages] = useState([]);
+	console.log('Estado del loading:', loading);
 
 	// Si la category cambia el useEffect va a ejecutar la funcion que tenga adentro
 	// useEffect(() => {
@@ -19,12 +18,13 @@ export const GifGrid = ({ category }) => {
 	return (
 		<>
 			<h3>{category}</h3>
-			{loading ? 'Cargando ...' : 'Data cargada'}
-			{/* <div className='card-grid'>
+			{/* Forma corta de hacer un if */}
+			{loading && <p>Buscando...</p>}
+			<div className='card-grid'>
 				{images.map(img => (
 					<GifGridItem key={img.id} {...img} />
 				))}
-			</div> */}
+			</div>
 		</>
 	);
 };
