@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 import { GifGrid } from './components/GifGrid';
 
 const App = ({ title }) => {
-	let [categories, setCategories] = useState(['One Puch']);
+	let [categories, setCategories] = useState(['Dragon']);
 
 	console.log(categories);
 
@@ -17,7 +17,7 @@ const App = ({ title }) => {
 
 			<ul>
 				{categories.map(category => (
-					<GifGrid key={catgory} category={category} />
+					<GifGrid key={category} category={category} />
 				))}
 			</ul>
 		</>

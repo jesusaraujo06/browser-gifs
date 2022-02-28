@@ -10,11 +10,11 @@ export const AddCategory = ({ setCategories }) => {
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		console.log('Form Enviado');
+		console.log('Form Envsiado');
 
 		if (inputValue.trim().length > 2) {
 			// Recibimos una funcion por parametro
-			setCategories(categories => [...categories, inputValue]);
+			setCategories(categories => [inputValue, ...categories]);
 			setInputValue('');
 		}
 	};
